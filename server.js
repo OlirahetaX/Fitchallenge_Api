@@ -63,6 +63,12 @@ app.listen(port, () => {
   console.log("Servidor corriendo en el puerto", port);
 });
 
+app.get("/", (req,res) => {
+  res.send({
+    message:"Fitchallenge",
+  })
+})
+
 app.post("/createUser", async (req, res) => {
   const auth = getAuth(firebaseApp);
   const email = req.body.correo;
